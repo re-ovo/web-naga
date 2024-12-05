@@ -1,4 +1,4 @@
-mod utils;
-mod wgsl;
-mod glsl;
-mod common;
+pub mod utils;
+pub mod wgsl;
+pub mod glsl;
+pub mod common;
