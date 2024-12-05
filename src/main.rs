@@ -1,3 +1,4 @@
+use wasm_bindgen::convert::IntoWasmAbi;
 use web_naga::common::ShaderStage;
 use web_naga::glsl::{GlslFrontend, GlslVersion, GlslWriterFlags};
 use web_naga::wgsl::{GlslBackendOptions, WgslFrontend};
@@ -49,7 +50,7 @@ fn test_wgsl() {
     let glsl = shader.to_glsl("vertex_main".into(),GlslBackendOptions {
         version: GlslVersion::desktop(450),
         stage: ShaderStage::Vertex,
-        flags: GlslWriterFlags::NONE,
+        flags: GlslWriterFlags::None.into_abi(),
     });
     println!("{}", glsl);
 }

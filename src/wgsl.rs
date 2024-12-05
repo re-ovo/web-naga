@@ -27,7 +27,18 @@ impl WgslFrontend {
 pub struct GlslBackendOptions {
     pub version: GlslVersion,
     pub stage: ShaderStage,
-    pub flags: GlslWriterFlags,
+    pub flags: u32,
+}
+
+#[wasm_bindgen]
+impl GlslBackendOptions {
+    pub fn new() -> Self {
+        GlslBackendOptions {
+            version: GlslVersion::desktop(450),
+            stage: ShaderStage::Vertex,
+            flags: 0,
+        }
+    }
 }
 
 #[wasm_bindgen]
@@ -42,7 +53,7 @@ impl ShaderModule {
 
         let mut options = Options::default();
         options.version = opts.version.get_naga_version();
-        options.writer_flags = WriterFlags::from_bits(opts.flags.bits()).unwrap();
+        options.writer_flags = WriterFlags::from_bits(opts.flags).unwrap();
 
         let pipeline_options = PipelineOptions {
             shader_stage: opts.stage.to_naga_shader_stage(),
