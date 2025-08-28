@@ -30,3 +30,17 @@ const options = GlslBackendOptions.new();
 const result = module.to_glsl("main", options)
 ```
 
+## Contributing
+
+### Setup wasm-pack
+
+```bash
+rustup target add wasm32-unknown-unknown
+
+cargo install wasm-pack
+```
+
+### Build
+```bash
+wasm-pack build --target web
+```
