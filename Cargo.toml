@@ -1,8 +1,12 @@
 [package]
 name = "web-naga"
-version = "0.1.0"
+version = "0.1.1"
 authors = ["RE <qq1609403959@outlook.com>"]
 edition = "2018"
+license = "MIT"
+repository = "https://github.com/re-ovo/web-naga"
+description = "Provides mutual conversion between different Shader language syntaxes, implemented using naga and wasm"
+keywords = ["web", "naga", "glsl", "wgsl", "shader", "wasm"]
 
 [lib]
 crate-type = ["cdylib", "rlib"]
@@ -12,7 +16,7 @@ default = ["console_error_panic_hook"]
 
 [dependencies]
 wasm-bindgen = "0.2.84"
-naga = { version = "25.0.1", features = ["wgsl-in", "wgsl-out", "glsl-in", "glsl-out"] }
+naga = { version = "26.0.0", features = ["wgsl-in", "wgsl-out", "glsl-in", "glsl-out"] }
 
 # The `console_error_panic_hook` crate provides better debugging of panics by
 # logging them with `console.error`. This is great for development, but requires
