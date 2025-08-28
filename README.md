@@ -2,6 +2,12 @@
 
 Provides mutual conversion between different Shader language syntaxes, implemented using naga and wasm
 
+## Installation
+
+```bash
+npm i web-naga
+```
+
 ## Frontend and Backend
 ### Frontend
 - GLSL
